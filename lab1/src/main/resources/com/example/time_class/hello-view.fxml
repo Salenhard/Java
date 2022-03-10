@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox minHeight="217.0" minWidth="152.0" prefHeight="243.0" prefWidth="152.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.time_class.HelloController">
+<VBox maxHeight="243.0" maxWidth="152.0" minHeight="243.0" minWidth="152.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="243.0" prefWidth="152.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.time_class.HelloController">
    <children>
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
@@ -70,7 +70,7 @@
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
             <Label fx:id="ConvertToHoursTextLabel" prefHeight="18.0" prefWidth="69.0" text="Hours:" />
-            <Label fx:id="ConvertToHoursLabel" graphicTextGap="0.0" prefHeight="20.0" prefWidth="148.0" />
+            <Label fx:id="ConvertToHoursLabel" prefHeight="20.0" prefWidth="148.0" />
          </children>
       </HBox>
       <HBox prefHeight="100.0" prefWidth="200.0">
