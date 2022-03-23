@@ -4,7 +4,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.text.Text;
 
 public class HelloController {
     @FXML
@@ -32,9 +31,9 @@ public class HelloController {
 
     public void set_time() {                                                                        // устанавливает все значения времени
         TimeLabel.setText(time.toString());
-        ConvertToHoursLabel.setText(Integer.toString(time.convert_to_hours()));
-        ConvertToMinutesLabel.setText(Integer.toString(time.convert_to_minutes()));
-        ConvertToSecondsLabel.setText(Integer.toString(time.convert_to_seconds()));
+        ConvertToHoursLabel.setText(Integer.toString(time.convertToHours()));
+        ConvertToMinutesLabel.setText(Integer.toString(time.convertToMinutes()));
+        ConvertToSecondsLabel.setText(Integer.toString(time.convertToSeconds()));
     }
 
     public void OnSetSecondsButtonClick(ActionEvent actionEvent) {                                      // Кнопка установить секунды

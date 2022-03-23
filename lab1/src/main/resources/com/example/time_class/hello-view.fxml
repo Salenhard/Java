@@ -5,85 +5,87 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="243.0" maxWidth="152.0" minHeight="243.0" minWidth="152.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="243.0" prefWidth="152.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.time_class.HelloController">
+<VBox maxHeight="287.0" maxWidth="199.0" minHeight="287.0" minWidth="139.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="287.0" prefWidth="199.0" spacing="5.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.time_class.HelloController">
    <children>
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Label fx:id="TimeTextLabel" prefHeight="25.0" prefWidth="112.0" text="Time:">
+            <Label fx:id="TimeTextLabel" minWidth="38.0" prefHeight="25.0" prefWidth="38.0" text="Time:">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label fx:id="TimeLabel" prefHeight="17.0" prefWidth="184.0">
+            <Label fx:id="TimeLabel" prefHeight="25.0" prefWidth="816.0">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
          </children>
       </HBox>
-      <Pane minHeight="5.0" minWidth="0.0" prefHeight="5.0" prefWidth="152.0" />
       <HBox prefHeight="20.0" prefWidth="143.0">
          <children>
-            <Button fx:id="SetHoursButton" onAction="#OnSetHoursButtonClick" prefHeight="25.0" prefWidth="98.0" text="set_hours" />
-            <TextField fx:id="SetHoursTextField" prefHeight="25.0" prefWidth="53.0" />
+            <Button fx:id="SetHoursButton" onAction="#OnSetHoursButtonClick" prefHeight="25.0" prefWidth="139.0" text="set_hours" />
+            <TextField fx:id="SetHoursTextField" maxHeight="25.0" maxWidth="53.0" minHeight="25.0" minWidth="53.0" prefHeight="25.0" prefWidth="53.0" />
          </children>
       </HBox>
       <HBox prefHeight="25.0" prefWidth="138.0">
          <children>
-            <Button fx:id="SetSecondsButton" onAction="#OnSetSecondsButtonClick" prefHeight="25.0" prefWidth="98.0" text="set_seconds" />
-            <TextField fx:id="SetSecondsTextField" prefHeight="25.0" prefWidth="53.0" />
+            <Button fx:id="SetSecondsButton" onAction="#OnSetSecondsButtonClick" prefHeight="25.0" prefWidth="155.0" text="set_seconds" />
+            <TextField fx:id="SetSecondsTextField" maxHeight="25.0" maxWidth="53.0" minHeight="25.0" minWidth="53.0" prefHeight="25.0" prefWidth="53.0" />
          </children>
       </HBox>
       <HBox prefHeight="25.0" prefWidth="138.0">
          <children>
-            <Button fx:id="SetMinutesButton" onAction="#OnSetMinutesButtonClick" prefHeight="25.0" prefWidth="98.0" text="set_minutes" />
-            <TextField fx:id="SetMinutesTextField" prefHeight="25.0" prefWidth="53.0" />
+            <Button fx:id="SetMinutesButton" onAction="#OnSetMinutesButtonClick" prefHeight="25.0" prefWidth="185.0" text="set_minutes" />
+            <TextField fx:id="SetMinutesTextField" maxHeight="25.0" maxWidth="53.0" minHeight="25.0" minWidth="53.0" prefHeight="25.0" prefWidth="53.0" />
          </children>
          <VBox.margin>
-            <Insets />
+            <Insets bottom="5.0" />
          </VBox.margin>
       </HBox>
-      <Pane minHeight="5.0" minWidth="0.0" prefHeight="5.0" prefWidth="152.0" />
       <HBox prefHeight="27.0" prefWidth="147.0">
          <children>
-            <Button fx:id="AddSecondsButton" onAction="#OnAddSecondsButtonClick" prefHeight="25.0" prefWidth="98.0" text="add_seconds" />
-            <TextField fx:id="AddSecondsTextField" prefHeight="25.0" prefWidth="53.0" />
+            <Button fx:id="AddSecondsButton" onAction="#OnAddSecondsButtonClick" prefHeight="25.0" prefWidth="168.0" text="add_seconds" />
+            <TextField fx:id="AddSecondsTextField" maxHeight="25.0" maxWidth="53.0" minHeight="25.0" minWidth="53.0" prefHeight="25.0" prefWidth="53.0" />
          </children>
       </HBox>
       <HBox prefHeight="25.0" prefWidth="138.0">
          <children>
-            <Button fx:id="AddMinutesButton" onAction="#OnAddMinutesButtonClick" prefHeight="25.0" prefWidth="98.0" text="add_minutes" />
-            <TextField fx:id="AddMinutesTextField" prefHeight="25.0" prefWidth="53.0" />
+            <Button fx:id="AddMinutesButton" onAction="#OnAddMinutesButtonClick" prefHeight="25.0" prefWidth="156.0" text="add_minutes" />
+            <TextField fx:id="AddMinutesTextField" maxHeight="25.0" maxWidth="53.0" minHeight="25.0" minWidth="53.0" prefHeight="25.0" prefWidth="53.0" />
          </children>
       </HBox>
       <HBox prefHeight="27.0" prefWidth="148.0">
          <children>
-            <Button fx:id="AddHoursButton" onAction="#OnAddHoursButtonClick" prefHeight="25.0" prefWidth="98.0" text="add_hours" />
-            <TextField fx:id="AddHoursTextField" prefHeight="25.0" prefWidth="53.0" />
-         </children>
-      </HBox>
-      <Pane minHeight="5.0" minWidth="0.0" prefHeight="5.0" prefWidth="152.0" />
-      <HBox prefHeight="100.0" prefWidth="200.0">
-         <children>
-            <Label fx:id="ConvertToHoursTextLabel" prefHeight="18.0" prefWidth="69.0" text="Hours:" />
-            <Label fx:id="ConvertToHoursLabel" prefHeight="20.0" prefWidth="148.0" />
+            <Button fx:id="AddHoursButton" onAction="#OnAddHoursButtonClick" prefHeight="25.0" prefWidth="195.0" text="add_hours">
+               <HBox.margin>
+                  <Insets bottom="5.0" />
+               </HBox.margin></Button>
+            <TextField fx:id="AddHoursTextField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="53.0" />
          </children>
       </HBox>
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Label fx:id="ConvertToMinutesTextLabel" prefHeight="17.0" prefWidth="94.0" text="Minutes:" />
-            <Label fx:id="ConvertToMinutesLabel" graphicTextGap="0.0" prefHeight="17.0" prefWidth="152.0" />
+            <Label fx:id="ConvertToHoursTextLabel" maxHeight="18.0" maxWidth="37.0" minHeight="18.0" minWidth="37.0" prefHeight="18.0" prefWidth="37.0" text="Hours:" />
+            <Label fx:id="ConvertToHoursLabel" prefHeight="18.0" prefWidth="598.0" />
          </children>
       </HBox>
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Label fx:id="ConvertToSecondsTextLabel" prefHeight="17.0" prefWidth="93.0" text="Seconds:" />
-            <Label fx:id="ConvertToSecondsLabel" graphicTextGap="0.0" prefHeight="17.0" prefWidth="149.0" />
+            <Label fx:id="ConvertToMinutesTextLabel" maxHeight="17.0" maxWidth="46.0" minWidth="46.0" prefHeight="17.0" prefWidth="46.0" text="Minutes:" />
+            <Label fx:id="ConvertToMinutesLabel" graphicTextGap="0.0" prefHeight="17.0" prefWidth="482.0" />
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label fx:id="ConvertToSecondsTextLabel" minHeight="17.0" minWidth="48.0" prefHeight="17.0" prefWidth="93.0" text="Seconds:" />
+            <Label fx:id="ConvertToSecondsLabel" graphicTextGap="0.0" prefHeight="17.0" prefWidth="983.0" />
          </children>
       </HBox>
    </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
 </VBox>

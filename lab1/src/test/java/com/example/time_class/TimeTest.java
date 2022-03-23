@@ -66,20 +66,20 @@ class TimeTest {
     void convert_to_hours() {
         Time s1 = new Time();
         s1.setProps(2,2,2);
-        assertEquals(2, s1.convert_to_hours());
+        assertEquals(2, s1.convertToHours());
     }
 
     @Test
     void convert_to_minutes() {
         Time s1 = new Time();
         s1.setProps(2,2,2);
-        assertEquals(122,s1.convert_to_minutes());
+        assertEquals(122,s1.convertToMinutes());
     }
 
     @Test
     void convert_to_seconds() {
         Time s1 = new Time();
         s1.setProps(2,2,2);
-        assertEquals(7322, s1.convert_to_seconds());
+        assertEquals(7322, s1.convertToSeconds());
     }
 }
