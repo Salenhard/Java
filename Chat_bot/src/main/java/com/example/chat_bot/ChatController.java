@@ -1,53 +1,61 @@
 package com.example.chat_bot;
 
-import java.io.*;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
+
+import java.io.IOException;
+
 public class ChatController {
-    static LoginController s;
     @FXML
     private TextArea chatTextArea;
     @FXML
     private TextField inputTextField;
     private Bot bot;
+    private final String fileName = "C:\\Users\\gurba\\IdeaProjects\\Java\\text.txt";
+
+    /**
+     * срабатывает при запуске окна создаёт бота и загружает в chatTextArea историю сообщений
+     */
 
     public void initialize(){
-        bot = new Bot("C:\\Users\\gurba\\IdeaProjects\\Java\\text.txt");
+        bot = new Bot(fileName);
         chatTextArea.appendText(bot.getMessages());
     }
 
+    /**
+     * onSendButtonClick отправляет сообщение боту и выводит ответ на него
+     */
+
     @FXML
-    protected void onSendButtonClick(ActionEvent event) {
+    protected void onSendButtonClick() {
         if(!inputTextField.getText().equals("")) {
             bot.addMessage(inputTextField.getText());
-            chatTextArea.appendText(s.name + " : " + inputTextField.getText() + "\n");
+            chatTextArea.appendText(LoginController.name + " : " + inputTextField.getText() + "\n");
             chatTextArea.appendText("Бот : " + bot.parseMessage() + "\n");
+            try{
+                bot.writeFile(fileName, LoginController.name + " : " + inputTextField.getText() + "\n");
+                bot.writeFile(fileName, "Бот : " + bot.message.get(bot.message.size() - 1) + "\n");
+            }
+            catch (IOException e){
+                e.printStackTrace();
+            }
             inputTextField.setText("");
         }
     }
+
+    /**
+     * onSendKeyPressed вызывает onButtonClick при нажатии enter
+     * @param event передаёт events(нажтие клавиш или какие-то манипуляции с окном) передаёт нажатие клавиши enter
+     */
+
     @FXML
     protected void onSendKeyPressed(KeyEvent event){
-
+        if(event.getCode() == KeyCode.ENTER)
+            onSendButtonClick();
     }
 
-    @Override
-    protected void finalize() throws Throwable {
-
-        try(FileWriter writer = new FileWriter("C:\\Users\\gurba\\IdeaProjects\\Java\\text.txt", true))
-        {
-            writer.write(chatTextArea.getText());
-            writer.close();
-        }
-        catch(IOException ex){
-
-            System.out.println(ex.getMessage());
-        }
-        super.finalize();
-    }
-
-    //todo сделать сохранение сообщений в файл при закрытии программы
 }

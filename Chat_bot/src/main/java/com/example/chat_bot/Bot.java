@@ -1,21 +1,24 @@
 package com.example.chat_bot;
+
 import java.util.Date;
 import java.util.ArrayList;
 import java.io.*;
 public class Bot {
-    private ArrayList<String> message;
+    public ArrayList<String> message;
 
     /**
-     * Конструктор по умолчанию создаёт пустой список
+     * Bot Конструктор по умолчанию создаёт пустой список
      */
+
     Bot() {
         message = new ArrayList<>();
     }
 
     /**
-     * \brief Bot(fileName) Конструктор с загрузкой данных из файла fileName
+     * Bot Конструктор с загрузкой данных из файла fileName
      * @param fileName - путь или название файла
      */
+
     Bot(String fileName) {
         try {
             message = new ArrayList<>();
@@ -27,33 +30,47 @@ public class Bot {
                 message.add(line);
                 line = reader.readLine();
             }
+            fr.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    public void writeFile(String fileName){
-        FileOutputStream f = null;
+
+    /**
+     * writFile writing history of chatting (saving message)
+     * @param fileName name of file or path to the file
+     * @param message last message
+     * @throws IOException if file not opened
+     */
+
+    public void writeFile(String fileName, String message) throws IOException {
+        File file = new File(fileName);
+        FileWriter writer = new FileWriter(file, true);
+
+        // Запись содержимого в файл
+        writer.write(message);
+        writer.flush();
+        writer.close();
     }
-    Bot(ArrayList<String> message_)
-    {
+
+    Bot(ArrayList<String> message_) {
         message = new ArrayList<>();
         setMessage(message_);
     }
 
     /**
-     * \brief getMessage
+     * getMessage
      * @return Возращает список сообщений
      */
 
     public String getMessages() {
-        String str ="";
-        for(int i = 0; i < message.size(); i++)
-            str += message.get(i) + "\n";
-        return str;
+        StringBuilder str = new StringBuilder();
+        for (String s : message) str.append(s).append("\n");
+        return str.toString();
     }
 
     /**
-     * \brief setMessage устанавливает сообщение
+     * setMessage устанавливает сообщение
      * @param message_ - новое сообщение его знач записывается в message
      */
 
@@ -62,7 +79,7 @@ public class Bot {
     }
 
     /**
-     * \brief addMessage добоваляет сообщение в конец массива
+     * addMessage добоваляет сообщение в конец массива
      * @param message_  - сообщение
      */
     public void addMessage(String message_) {
@@ -73,12 +90,12 @@ public class Bot {
     }
 
     /**
-     * \brief multiply
+     * multiply
      * Обрабатывает строку и перемножает 2 числа
      * @return результат умножения
      */
 
-    private double multiply(){
+    private double multiply() {
         String[] num = new String[2];
         num[1] = "";
         num[0] = "";
@@ -95,17 +112,17 @@ public class Bot {
     }
 
     /**
-     * \brief getTime возращает текущее время
+     * getTime возращает текущее время
      * @return текущее дата и время
      */
 
-    private String getTime(){
+    private String getTime() {
         Date date = new Date();
         return date.toString();
     }
 
     /**
-     * \brief division
+     * division
      *
      * Обрабатывает строку и делит 2 числа
      *
@@ -129,11 +146,11 @@ public class Bot {
     }
 
     /**
-     * \brief parseMessage обробатывает строку message
+     * parseMessage обробатывает строку message
      * @return ответ на сообщение
      */
 
-    public String parseMessage(){
+    public String parseMessage() {
         String str = "Неизвестая для меня команда! Для того чтобы узнать доступные команды введите: список команд";
         String message_ = this.message.get(this.message.size() - 1).toLowerCase();
         if(message_.contains("привет") || message_.contains("здарова") || message_.contains("ку") || message_.contains("йоу") || message_.contains("здравствуйте")) {
@@ -161,10 +178,28 @@ public class Bot {
             addMessage(str);
             return str;
         }
-        if(message_.contains("")){
+        if(message_.contains("пока")) {
+            str = "Досвидания";
+            addMessage(str);
             return str;
         }
+        if(message_.contains("курс валюты")) {
+            str = getCurrency();
+            addMessage(str);
+            return str;
+        }
+        addMessage(str);
         return str;
+    }
+
+    /**
+     * gets info from internet
+     * @return str - current dollar Currency
+     */
+
+    private String getCurrency() {
+        String str = "";
+        return str;                             //todo доделать отображение курса валюты, возможность открывать другие программы, загружать картинки(наверное нет)
     }
 
 }

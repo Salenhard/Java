@@ -8,7 +8,7 @@
 
 <VBox fx:id="loginVBox" alignment="CENTER" maxHeight="238.0" maxWidth="356.0" minHeight="238.0" minWidth="356.0" prefHeight="238.0" prefWidth="356.0" spacing="5.0" style="-fx-background-color: #13aced;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.chat_bot.LoginController">
    <children>
-      <TextField fx:id="loginTextField" maxWidth="300.0" minWidth="300.0" prefHeight="28.0" prefWidth="300.0" promptText="Имя" style="-fx-background-color: fce130; -fx-background-radius: 10; -fx-text-fill: #0c2aa8; -fx-border-radius: 10; -fx-border-color: #eda513; -fx-prompt-text-fill: #0c2aa8;">
+      <TextField fx:id="loginTextField" maxWidth="300.0" minWidth="300.0" onKeyPressed="#onJoinEnterPressed" prefHeight="28.0" prefWidth="300.0" promptText="Имя" style="-fx-background-color: fce130; -fx-background-radius: 10; -fx-text-fill: #0c2aa8; -fx-border-radius: 10; -fx-border-color: #eda513; -fx-prompt-text-fill: #0c2aa8;">
          <VBox.margin>
             <Insets />
          </VBox.margin>
