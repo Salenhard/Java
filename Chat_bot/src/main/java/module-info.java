@@ -1,3 +1,6 @@
+/**
+ * what is that?
+ */
 module com.example.chat_bot {
     requires javafx.controls;
     requires javafx.fxml;

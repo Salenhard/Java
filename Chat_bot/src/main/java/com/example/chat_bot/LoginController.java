@@ -11,14 +11,17 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * controller for login screen
+ */
 public class LoginController{
     @FXML
     private TextField loginTextField;
     static String name;
 
     /**
-     * onJoinButtonClick при нажатии устанавливает имя пользлователя и запускает окно чата
-     * @throws IOException ?? что-то с stage
+     * sets name of user and load chat screen
+     * @throws IOException if scene is not found
      */
 
     @FXML
@@ -34,8 +37,8 @@ public class LoginController{
     }
 
     /**
-     * onJoinEnterPressed при нажатии enter выполняет onJoinButtonClick
-     * @param event передаёт events(нажтие клавиш или какие-то манипуляции с окном) передаёт нажатие клавиши enter
+     * activates onJoinButtonClick when enter is pressed
+     * @param event pressed button or action
      */
 
     @FXML

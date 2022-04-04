@@ -3,11 +3,18 @@ package com.example.chat_bot;
 import java.util.Date;
 import java.util.ArrayList;
 import java.io.*;
+
+/**
+ * bot that answers on commands(messages)
+ */
 public class Bot {
+    /**
+     * List of messages
+     */
     public ArrayList<String> message;
 
     /**
-     * Bot Конструктор по умолчанию создаёт пустой список
+     * constructor without params
      */
 
     Bot() {
@@ -15,8 +22,8 @@ public class Bot {
     }
 
     /**
-     * Bot Конструктор с загрузкой данных из файла fileName
-     * @param fileName - путь или название файла
+     * constructor with file
+     * @param fileName name or path to file
      */
 
     Bot(String fileName) {
@@ -37,7 +44,7 @@ public class Bot {
     }
 
     /**
-     * writFile writing history of chatting (saving message)
+     * writing history of chatting (saving message)
      * @param fileName name of file or path to the file
      * @param message last message
      * @throws IOException if file not opened
@@ -53,14 +60,17 @@ public class Bot {
         writer.close();
     }
 
+    /**
+     * constructor that gets list of messages
+     * @param message_ list of messages
+     */
     Bot(ArrayList<String> message_) {
         message = new ArrayList<>();
         setMessage(message_);
     }
 
     /**
-     * getMessage
-     * @return Возращает список сообщений
+     * @return list of messages
      */
 
     public String getMessages() {
@@ -70,8 +80,8 @@ public class Bot {
     }
 
     /**
-     * setMessage устанавливает сообщение
-     * @param message_ - новое сообщение его знач записывается в message
+     * set new message
+     * @param message_  new message
      */
 
     public void setMessage(ArrayList<String> message_) {
@@ -79,8 +89,8 @@ public class Bot {
     }
 
     /**
-     * addMessage добоваляет сообщение в конец массива
-     * @param message_  - сообщение
+     * append new message in end of list
+     * @param message_ new message
      */
     public void addMessage(String message_) {
         if(!message_.equals(""))
@@ -90,9 +100,8 @@ public class Bot {
     }
 
     /**
-     * multiply
-     * Обрабатывает строку и перемножает 2 числа
-     * @return результат умножения
+     * parse message
+     * @return result of multiply
      */
 
     private double multiply() {
@@ -112,8 +121,7 @@ public class Bot {
     }
 
     /**
-     * getTime возращает текущее время
-     * @return текущее дата и время
+     * @return current time and date
      */
 
     private String getTime() {
@@ -122,11 +130,8 @@ public class Bot {
     }
 
     /**
-     * division
-     *
-     * Обрабатывает строку и делит 2 числа
-     *
-     * @return результат деления
+     * parse message
+     * @return result of division
      */
 
     private double division() {
@@ -146,8 +151,8 @@ public class Bot {
     }
 
     /**
-     * parseMessage обробатывает строку message
-     * @return ответ на сообщение
+     * parse last message
+     * @return answer on message
      */
 
     public String parseMessage() {
@@ -194,7 +199,7 @@ public class Bot {
 
     /**
      * gets info from internet
-     * @return str - current dollar Currency
+     * @return str current dollar Currency
      */
 
     private String getCurrency() {

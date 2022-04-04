@@ -9,6 +9,9 @@ import javafx.scene.input.KeyEvent;
 
 import java.io.IOException;
 
+/**
+ * controller for chat
+ */
 public class ChatController {
     @FXML
     private TextArea chatTextArea;
@@ -18,7 +21,7 @@ public class ChatController {
     private final String fileName = "C:\\Users\\gurba\\IdeaProjects\\Java\\text.txt";
 
     /**
-     * срабатывает при запуске окна создаёт бота и загружает в chatTextArea историю сообщений
+     * gets data from text file in start of program
      */
 
     public void initialize(){
@@ -27,7 +30,7 @@ public class ChatController {
     }
 
     /**
-     * onSendButtonClick отправляет сообщение боту и выводит ответ на него
+     * send meesage to bot and gets answer, saving all messages in text file
      */
 
     @FXML
@@ -48,8 +51,8 @@ public class ChatController {
     }
 
     /**
-     * onSendKeyPressed вызывает onButtonClick при нажатии enter
-     * @param event передаёт events(нажтие клавиш или какие-то манипуляции с окном) передаёт нажатие клавиши enter
+     * calls onSendButtonClick when pressed enter
+     * @param event pressed button or another action
      */
 
     @FXML

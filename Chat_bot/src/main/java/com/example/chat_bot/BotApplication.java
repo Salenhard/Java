@@ -7,6 +7,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * creates login screen
+ */
 public class BotApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
@@ -18,6 +21,9 @@ public class BotApplication extends Application {
         stage.show();
     }
 
+    /**
+     * @param args argument
+     */
     public static void main(String[] args) {
         launch();
     }
