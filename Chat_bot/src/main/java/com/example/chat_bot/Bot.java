@@ -7,6 +7,7 @@ import java.io.*;
 /**
  * bot that answers on commands(messages)
  */
+
 public class Bot {
     /**
      * List of messages
