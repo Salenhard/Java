@@ -27,7 +27,7 @@
             <font>
                <Font name="Calibri" size="16.0" />
             </font></TextField>
-          <Button fx:id="sendButton" minWidth="107.0" onAction="#onSendButtonClick" prefHeight="37.0" prefWidth="107.0" style="-fx-background-color: #eda513; -fx-background-radius: 10;" text="Отправить" textFill="#0c2aa8" HBox.hgrow="NEVER">
+          <Button fx:id="sendButton" minWidth="107.0" onAction="#onSendButtonClick" prefHeight="37.0" prefWidth="107.0" style="-fx-background-color: #e32d91; -fx-background-radius: 10;" text="Отправить" textFill="#0c2aa8" HBox.hgrow="NEVER">
             <font>
                <Font name="Calibri" size="16.0" />
             </font></Button>

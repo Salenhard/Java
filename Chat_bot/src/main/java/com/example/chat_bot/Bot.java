@@ -203,8 +203,7 @@ public class Bot {
      */
 
     private String getCurrency() {
-        String str = "";
-        return str;                             //todo доделать отображение курса валюты, возможность открывать другие программы, загружать картинки(наверное нет)
+        return "";
     }
 
 }
