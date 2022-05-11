@@ -160,7 +160,7 @@ public class Bot {
         String str = "Неизвестая для меня команда! Для того чтобы узнать доступные команды введите: список команд";
         String message_ = this.message.get(this.message.size() - 1).toLowerCase();
         if(message_.contains("привет") || message_.contains("здарова") || message_.contains("ку") || message_.contains("йоу") || message_.contains("здравствуйте")) {
-            str = "Привет, человечишка!";
+            str = "Привет!";
             addMessage(str);
             return str;
         }
