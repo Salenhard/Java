@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="352.0" prefWidth="494.0" spacing="5.0" style="-fx-background-color: #13aced;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.chat_bot.ChatController">
+<VBox prefHeight="352.0" prefWidth="494.0" spacing="5.0" style="-fx-background-color: #c5ecfc;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.chat_bot.ChatController">
     <padding>
         <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
     </padding>
@@ -17,17 +17,17 @@
       <font>
          <Font name="Calibri" size="16.0" />
       </font></Label>
-   <TextArea fx:id="chatTextArea" editable="false" prefHeight="492.0" prefWidth="394.0" style="-fx-control-inner-background: #fce130; -fx-text-fill: #0c2aa8; -fx-border-color: #eda513; -fx-background-radius: 5; -fx-border-radius: 5;">
+   <TextArea fx:id="chatTextArea" editable="false" prefHeight="492.0" prefWidth="394.0" style="-fx-control-inner-background: white; -fx-text-fill: #0c2aa8; -fx-border-color: white; -fx-background-radius: 5; -fx-border-radius: 5;">
       <font>
          <Font name="Calibri" size="16.0" />
       </font></TextArea>
    <HBox prefHeight="25.0" prefWidth="167.0" spacing="5.0">
       <children>
-         <TextField fx:id="inputTextField" minWidth="360.0" onKeyPressed="#onSendKeyPressed" prefHeight="37.0" prefWidth="360.0" style="-fx-background-color: #fce130; -fx-border-color: #eda513; -fx-background-radius: 10; -fx-border-radius: 10; -fx-text-fill: #0c2aa8;" HBox.hgrow="ALWAYS">
+         <TextField fx:id="inputTextField" minWidth="360.0" onKeyPressed="#onSendKeyPressed" prefHeight="37.0" prefWidth="360.0" style="-fx-background-color: white; -fx-border-color: white; -fx-background-radius: 10; -fx-border-radius: 10; -fx-text-fill: #0c2aa8;" HBox.hgrow="ALWAYS">
             <font>
                <Font name="Calibri" size="16.0" />
             </font></TextField>
-          <Button fx:id="sendButton" minWidth="107.0" onAction="#onSendButtonClick" prefHeight="37.0" prefWidth="107.0" style="-fx-background-color: #eda513; -fx-background-radius: 10;" text="Отправить" textFill="#0c2aa8" HBox.hgrow="NEVER">
+          <Button fx:id="sendButton" minWidth="107.0" onAction="#onSendButtonClick" prefHeight="37.0" prefWidth="107.0" style="-fx-background-color: #fffdb8; -fx-background-radius: 10;" text="Отправить" textFill="#0c2aa8" HBox.hgrow="NEVER">
             <font>
                <Font name="Calibri" size="16.0" />
             </font></Button>

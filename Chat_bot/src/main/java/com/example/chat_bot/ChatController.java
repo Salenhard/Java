@@ -18,7 +18,7 @@ public class ChatController {
     @FXML
     private TextField inputTextField;
     private Bot bot;
-    private final String fileName = "C:\\Users\\gurba\\IdeaProjects\\Java\\text.txt";
+    private final String fileName = "text.txt";
 
     /**
      * gets data from text file in start of program

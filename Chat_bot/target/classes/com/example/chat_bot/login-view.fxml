@@ -16,7 +16,7 @@
             <Font name="Calibri" size="16.0" />
          </font>
       </TextField>
-      <Button fx:id="joinButton" contentDisplay="CENTER" maxWidth="300.0" minWidth="300.0" mnemonicParsing="false" onAction="#onJoinButtonClick" prefHeight="28.0" prefWidth="300.0" style="-fx-background-color: #eda513; -fx-background-radius: 10;" text="Войти" textAlignment="CENTER" textFill="#0c2aa8">
+      <Button fx:id="joinButton" contentDisplay="CENTER" maxWidth="300.0" minWidth="300.0" mnemonicParsing="false" onAction="#onJoinButtonClick" prefHeight="28.0" prefWidth="300.0" style="-fx-background-color: #e32d91; -fx-background-radius: 10;" text="Войти" textAlignment="CENTER" textFill="#0c2aa8">
          <VBox.margin>
             <Insets />
          </VBox.margin>
