@@ -1,8 +1,11 @@
 package com.example.chat_bot;
 
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.Date;
 import java.util.ArrayList;
 import java.io.*;
+import org.json.*;
 
 /**
  * bot that answers on commands(messages)
@@ -189,8 +192,12 @@ public class Bot {
             addMessage(str);
             return str;
         }
-        if(message_.contains("курс валюты")) {
-            str = getCurrency();
+        if(message_.contains("погода")) {
+            try {
+                str = getWeather("52,02", "113,30");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             addMessage(str);
             return str;
         }
@@ -199,12 +206,60 @@ public class Bot {
     }
 
     /**
-     * gets info from internet
-     * @return str current dollar Currency
+     * weather from internet
+     * @param lat - latitude
+     * @param lon - longitude
+     * @return weather in String
+     * @throws IOException
      */
+    private String getWeather(String lat, String lon) throws IOException {     // TODO кодировка
+        String key = "91320940294e5c61e0741ca35f382be0";
+        String url_string = "https://api.openweathermap.org/data/2.5/weather?lat="+ lat +"&lon=" + lon + "&appid=" + key + "&units=metric";
+        // url_string += "&lang=ru";                                   // информация будет на русском
 
-    private String getCurrency() {
-        return "";
+        HttpURLConnection connection = null;
+        BufferedReader reader = null;
+
+        URL url = new URL(url_string);
+
+        connection = (HttpURLConnection) url.openConnection();      // http соединение
+        connection.connect();
+
+        InputStream stream = connection.getInputStream();           // считываем весь полученый поток
+        reader = new BufferedReader(new InputStreamReader(stream)); // поток в виде строки
+
+        StringBuffer buffer = new StringBuffer();
+        String line = "";
+
+        while ((line = reader.readLine()) != null) {
+            buffer.append(line).append("\n");
+        }
+
+        if(connection != null)
+            connection.disconnect();
+
+        if(reader != null)
+            reader.close();
+
+        return processJSON(buffer.toString());                      // обрабатываем полученный JSON и возвращаем
+    }
+    /**
+     * convert JSON in String
+     * @param json
+     * @return some element json on String
+     * @throws IOException
+     */
+    private String processJSON(String json) throws IOException {
+        String str = "Пустота";
+
+        JSONObject jsonObject = new JSONObject(json);
+
+        str = "Населённый пункт: " + jsonObject.getString("name") + "\n";
+        str += "Температура: " + jsonObject.getJSONObject("main").getDouble("temp") + "\n";
+        str += "Давление: " + jsonObject.getJSONObject("main").getDouble("pressure") + " мм рт. ст." +"\n";
+        str += "Влажность: " + jsonObject.getJSONObject("main").getDouble("humidity") + "%";
+
+        return str;
     }
 
 }
