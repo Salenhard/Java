@@ -1,3 +1,7 @@
+/**
+ * DataBase for education
+ * @author Vladislav Gurbatov
+ */
 module com.example.database {
     requires javafx.controls;
     requires javafx.fxml;

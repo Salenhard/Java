@@ -212,7 +212,7 @@ public class Bot {
      * @return weather in String
      * @throws IOException
      */
-    private String getWeather(String lat, String lon) throws IOException {     // TODO кодировка
+    private String getWeather(String lat, String lon) throws IOException {
         String key = "91320940294e5c61e0741ca35f382be0";
         String url_string = "https://api.openweathermap.org/data/2.5/weather?lat="+ lat +"&lon=" + lon + "&appid=" + key + "&units=metric";
         // url_string += "&lang=ru";                                   // информация будет на русском
@@ -251,9 +251,7 @@ public class Bot {
      */
     private String processJSON(String json) throws IOException {
         String str = "Пустота";
-
         JSONObject jsonObject = new JSONObject(json);
-
         str = "Населённый пункт: " + jsonObject.getString("name") + "\n";
         str += "Температура: " + jsonObject.getJSONObject("main").getDouble("temp") + "\n";
         str += "Давление: " + jsonObject.getJSONObject("main").getDouble("pressure") + " мм рт. ст." +"\n";

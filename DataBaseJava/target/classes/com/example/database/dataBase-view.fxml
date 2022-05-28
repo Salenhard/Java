@@ -7,26 +7,27 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" prefHeight="255.0" prefWidth="358.0" spacing="5.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.database.DataBaseController">
+<VBox  onKeyPressed="#OnKeyPressed" alignment="TOP_CENTER" minHeight="200.0" minWidth="415.0" prefHeight="200.0" prefWidth="415.0" spacing="5.0" style="-fx-background-color: #91caeb;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.database.DataBaseController">
     <padding>
-        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+        <Insets top="5.0" />
     </padding>
-   <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="337.0" spacing="5.0">
+   <HBox alignment="CENTER_LEFT" fillHeight="false" prefHeight="37.0" prefWidth="543.0" spacing="5.0" VBox.vgrow="NEVER">
       <children>
-         <Button fx:id="addObjectButton" mnemonicParsing="false" onAction="#clickAddOjbectButton" text="Add" />
-         <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#clickDeleteButton" text="Delete" />
-         <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clickClearButton" text="Clear" />
-         <Button fx:id="saveFileButton" mnemonicParsing="false" onAction="#clickSaveFileButton" text="Save file" />
-         <Button fx:id="readFileButton" mnemonicParsing="false" onAction="#clickReadFileButton" text="Read file" />
+         <Button fx:id="addObjectButton" mnemonicParsing="false" onAction="#clickAddOjbectButton" prefHeight="37.0" prefWidth="63.0" text="Add" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
+         <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#clickDeleteButton" prefHeight="63.0" prefWidth="63.0" text="Delete" textAlignment="CENTER" />
+         <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clickClearButton" prefHeight="63.0" prefWidth="63.0" text="Clear" textAlignment="CENTER" />
+         <Button mnemonicParsing="false" onAction="#onClickButtonOpenFile" prefHeight="37.0" prefWidth="65.0" text="Open file" />
+         <Button fx:id="saveFileButton" mnemonicParsing="false" onAction="#clickSaveFileButton" prefHeight="37.0" prefWidth="63.0" text="Save file" textAlignment="CENTER" />
+         <Button fx:id="readFileButton" mnemonicParsing="false" onAction="#clickReadFileButton" prefHeight="37.0" prefWidth="63.0" text="Read file" textAlignment="CENTER" />
       </children>
       <opaqueInsets>
          <Insets left="5.0" right="5.0" top="5.0" />
       </opaqueInsets>
       <VBox.margin>
-         <Insets />
+         <Insets left="5.0" right="5.0" />
       </VBox.margin>
    </HBox>
-   <TableView fx:id="objectsTableView" editable="true">
+   <TableView fx:id="objectsTableView" editable="true" prefHeight="75.0" prefWidth="346.0" VBox.vgrow="ALWAYS">
      <columns>
        <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Name" />
        <TableColumn fx:id="ageColumn" prefWidth="75.0" text="Age" />
