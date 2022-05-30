@@ -6,6 +6,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <VBox alignment="TOP_CENTER" minHeight="200.0" minWidth="415.0" onKeyPressed="#OnKeyPressed" prefHeight="200.0" prefWidth="415.0" spacing="5.0" style="-fx-background-color: #91caeb;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.database.DataBaseController">
     <padding>
@@ -13,12 +14,30 @@
     </padding>
    <HBox alignment="CENTER_LEFT" fillHeight="false" prefHeight="37.0" prefWidth="543.0" spacing="5.0" VBox.vgrow="NEVER">
       <children>
-         <Button fx:id="addObjectButton" mnemonicParsing="false" onAction="#clickAddOjbectButton" prefHeight="37.0" prefWidth="63.0" text="Add" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
-         <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#clickDeleteButton" prefHeight="63.0" prefWidth="63.0" text="Delete" textAlignment="CENTER" />
-         <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clickClearButton" prefHeight="63.0" prefWidth="63.0" text="Clear" textAlignment="CENTER" />
-         <Button mnemonicParsing="false" onAction="#onClickButtonOpenFile" prefHeight="37.0" prefWidth="65.0" text="Open file" />
-         <Button fx:id="saveFileButton" mnemonicParsing="false" onAction="#clickSaveFileButton" prefHeight="37.0" prefWidth="63.0" text="Save file" textAlignment="CENTER" />
-         <Button fx:id="readFileButton" mnemonicParsing="false" onAction="#clickReadFileButton" prefHeight="37.0" prefWidth="63.0" text="Read file" textAlignment="CENTER" />
+         <Button fx:id="addObjectButton" mnemonicParsing="false" onAction="#clickAddObjectButton" prefHeight="37.0" prefWidth="63.0" style="-fx-background-color: #0f73d6;" text="Add" textAlignment="CENTER" textFill="BLACK" HBox.hgrow="ALWAYS">
+            <font>
+               <Font name="Roboto Regular" size="12.0" />
+            </font></Button>
+         <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#clickDeleteButton" prefHeight="63.0" prefWidth="63.0" style="-fx-background-color: #0f73d6;" text="Delete" textAlignment="CENTER" textFill="BLACK">
+             <font>
+                 <Font name="Roboto Regular" size="12.0" />
+             </font></Button>
+         <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clickClearButton" prefHeight="63.0" prefWidth="63.0" style="-fx-background-color: #0f73d6;" text="Clear" textAlignment="CENTER" textFill="BLACK">
+             <font>
+                 <Font name="Roboto Regular" size="12.0" />
+             </font></Button>
+         <Button mnemonicParsing="false" onAction="#onClickButtonOpenFile" prefHeight="37.0" prefWidth="65.0" style="-fx-background-color: #0f73d6;" text="Open file" textFill="BLACK">
+             <font>
+                 <Font name="Roboto Regular" size="12.0" />
+             </font></Button>
+         <Button fx:id="saveFileButton" mnemonicParsing="false" onAction="#clickSaveFileButton" prefHeight="37.0" prefWidth="63.0" style="-fx-background-color: #0f73d6;" text="Save file" textAlignment="CENTER" textFill="BLACK">
+             <font>
+                 <Font name="Roboto Regular" size="12.0" />
+             </font></Button>
+         <Button fx:id="readFileButton" mnemonicParsing="false" onAction="#clickReadFileButton" prefHeight="37.0" prefWidth="63.0" style="-fx-background-color: #0f73d6;" text="Read file" textAlignment="CENTER" textFill="BLACK">
+             <font>
+                 <Font name="Roboto Regular" size="12.0" />
+             </font></Button>
       </children>
       <opaqueInsets>
          <Insets left="5.0" right="5.0" top="5.0" />
@@ -27,12 +46,12 @@
          <Insets left="5.0" right="5.0" />
       </VBox.margin>
    </HBox>
-   <TableView fx:id="objectsTableView" editable="true" prefHeight="93.0" prefWidth="704.0" VBox.vgrow="ALWAYS">
+   <TableView fx:id="objectsTableView" editable="true" prefHeight="93.0" prefWidth="704.0" style="-fx-color: #0f73d6; -fx-font-name: Roboto Regular;" VBox.vgrow="ALWAYS">
      <columns>
-       <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Name" />
-       <TableColumn fx:id="ageColumn" prefWidth="75.0" text="Age" />
-         <TableColumn fx:id="numberColumn" prefWidth="75.0" text="Number" />
-         <TableColumn fx:id="moneyColumn" prefWidth="75.0" text="Money" />
+       <TableColumn fx:id="nameColumn" prefWidth="75.0" style="-fx-font-name: Roboto Regular;" text="Name" />
+       <TableColumn fx:id="ageColumn" prefWidth="75.0" style="-fx-font-name: Roboto Regular;" text="Age" />
+         <TableColumn fx:id="numberColumn" prefWidth="75.0" style="-fx-font-name: Roboto Regular;" text="Number" />
+         <TableColumn fx:id="moneyColumn" prefWidth="75.0" style="-fx-font-name: Roboto Regular;" text="Money" />
      </columns>
       <columnResizePolicy>
          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

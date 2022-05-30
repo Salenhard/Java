@@ -3,6 +3,7 @@ package com.example.database;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
@@ -16,6 +17,7 @@ import java.io.IOException;
  */
 public class NewPersonController {
 
+    public Label textFieldError;
     @FXML
     private Button buttonDecline;
 
@@ -30,8 +32,8 @@ public class NewPersonController {
 
     @FXML
     private TextField textFieldNumber;
-    private DataBase dataBase;
 
+    private DataBase dataBase;
     private TableView<Person> objectsTableView;
 
     /**
@@ -48,16 +50,89 @@ public class NewPersonController {
     /**
      * submit all params for new person
      * @param event input event
-     * @throws IOException if stage is broken
      */
     @FXML
-    void onButtonSubmitClick(ActionEvent event) throws IOException {
-        Person newPerson = new Person(textFieldName.getText(), Integer.parseInt(textFieldAge.getText()), Integer.parseInt(textFieldNumber.getText()), Integer.parseInt(textFieldMoney.getText()));
+    void onButtonSubmitClick(ActionEvent event){
+        int count = 0;
+        textFieldError.setVisible(false);
+        Person newPerson = new Person();
+        textFieldAge.setStyle("-fx-control-inner-background: white");
+        textFieldNumber.setStyle("-fx-control-inner-background: white");
+        textFieldMoney.setStyle("-fx-control-inner-background: white");
+        textFieldName.setStyle("-fx-control-inner-background: white");
+        try {
+            newPerson.setName(textFieldName.getText());
+        } catch (IOException e){
+            e.printStackTrace();
+            textFieldName.setStyle("-fx-control-inner-background: red");
+            count++;
+        }
+        try {
+            Integer.parseInt(textFieldAge.getText());
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+            textFieldAge.setStyle("-fx-control-inner-background: red");
+            count++;
+        }
+        try {
+            Integer.parseInt(textFieldMoney.getText());
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+            textFieldMoney.setStyle("-fx-control-inner-background: red");
+            count++;
+        }
+        try {
+            Integer.parseInt(textFieldNumber.getText());
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+            textFieldNumber.setStyle("-fx-control-inner-background: red");
+            count++;
+        }
+        if (count != 0) {
+            textFieldError.setVisible(true);
+            if(count == 1) {
+                textFieldError.setText("Wrong value!");
+            }
+            else {
+                textFieldError.setText("Wrong values!");
+            }
+            return;
+        }
+        try {
+            newPerson.setAge(Integer.parseInt(textFieldAge.getText()));
+        } catch (IOException e) {
+            e.printStackTrace();
+            textFieldAge.setStyle("-fx-control-inner-background: red");
+            count++;
+        }
+        try {
+            newPerson.setNumber(Integer.parseInt(textFieldNumber.getText()));
+        } catch (IOException e) {
+            e.printStackTrace();
+            textFieldNumber.setStyle("-fx-control-inner-background: red");
+            count++;
+        }
+        try {
+            newPerson.setMoney(Integer.parseInt(textFieldMoney.getText()));
+        } catch (IOException e) {
+            e.printStackTrace();
+            textFieldMoney.setStyle("-fx-control-inner-background: red");
+            count++;
+        }
+        if (count != 0) {
+            textFieldError.setVisible(true);
+            if(count == 1) {
+                textFieldError.setText("Wrong value!");
+            }
+            else {
+                textFieldError.setText("Wrong values!");
+            }
+            return;
+        }
         dataBase.objects.add(newPerson);
         Stage stage = (Stage) buttonDecline.getScene().getWindow();
         objectsTableView.refresh();
         stage.close();
-
     }
 
     /**
@@ -76,7 +151,12 @@ public class NewPersonController {
         this.objectsTableView = objectsTableView;
     }
 
-    public void onKeyPressed(KeyEvent event) throws IOException {
+    /**
+     * hotkeys for window
+     * @param event input key
+     */
+
+    public void onKeyPressed(KeyEvent event) {
         if(event.getCode() == KeyCode.ESCAPE)
             onButtonDeclineClick(new ActionEvent());
         if(event.getCode() == KeyCode.ENTER)

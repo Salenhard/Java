@@ -45,8 +45,11 @@ public class Person {
      * sets new name of person
      * @param name new name for person
      */
-    public void setName(String name) {
+    public void setName(String name) throws IOException {
+        if(!name.equals(""))
         this.name = name;
+        else
+            throw new IOException("Name cant be null!");
     }
 
     /**

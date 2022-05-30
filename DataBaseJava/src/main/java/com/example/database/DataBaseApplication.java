@@ -13,6 +13,7 @@ import java.io.IOException;
  * @since 21.05.2022
  */
 public class DataBaseApplication extends Application {
+
     /**
      * start
      * @param stage new window

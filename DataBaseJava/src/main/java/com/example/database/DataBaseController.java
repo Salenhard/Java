@@ -6,7 +6,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Control;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -43,7 +42,6 @@ public class DataBaseController{
     private TableView<Person> objectsTableView;
     private final DataBase data = new DataBase();
     private String fileName = "dsa.txt";
-    private final ObservableList<Person> list = FXCollections.observableList(data.objects);
 
     /**
      * when program is started set all data from file and make table of it
@@ -56,7 +54,7 @@ public class DataBaseController{
         }
 
         // связь с базой данных
-        objectsTableView.setItems(list);
+        objectsTableView.setItems(data.objects);
         ageColumn.setCellValueFactory(new PropertyValueFactory<>("age"));
         moneyColumn.setCellValueFactory(new PropertyValueFactory<>("money"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -106,7 +104,11 @@ public class DataBaseController{
         nameColumn.setOnEditCommit(
                 event -> {
                     Person person = event.getRowValue();
-                    person.setName(event.getNewValue());
+                    try {
+                        person.setName(event.getNewValue());
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                     objectsTableView.refresh();
                 }
         );
@@ -124,14 +126,16 @@ public class DataBaseController{
      * @param event input event
      */
     @FXML
-    void clickAddOjbectButton(ActionEvent event) throws IOException {
+    void clickAddObjectButton(ActionEvent event) throws IOException {
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(DataBaseApplication.class.getResource("newPerson-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
+
         stage.setTitle("New person");
         stage.setScene(scene);
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.getUserData();
+        stage.setResizable(false);
         stage.show();
 
         NewPersonController newPersonController = fxmlLoader.getController();
@@ -169,7 +173,7 @@ public class DataBaseController{
      * @param actionEvent input event
      */
     public void clickDeleteButton(ActionEvent actionEvent) {
-        data.objects.remove(list.indexOf(objectsTableView.getSelectionModel().getSelectedItem()));
+        data.objects.remove(data.objects.indexOf(objectsTableView.getSelectionModel().getSelectedItem()));
         objectsTableView.refresh();
     }
 
@@ -210,7 +214,7 @@ public class DataBaseController{
             clickDeleteButton(new ActionEvent());
 
         if (event.isControlDown() && event.getCode() == KeyCode.A)
-            clickAddOjbectButton(new ActionEvent());
+            clickAddObjectButton(new ActionEvent());
 
         if (event.isControlDown() && event.getCode() == KeyCode.O)
             onClickButtonOpenFile(new ActionEvent());

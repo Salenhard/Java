@@ -1,5 +1,8 @@
 
 package com.example.database;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.io.*;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -12,13 +15,13 @@ public class DataBase {
     /**
      * list of objects
      */
-    public ArrayList<Person> objects;
+    public ObservableList<Person> objects;
 
     /**
      * constructor with params
      */
     DataBase() {
-        objects = new ArrayList<>();
+        objects = FXCollections.observableArrayList();
     }
 
     /**
