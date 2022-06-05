@@ -1,7 +1,5 @@
 package com.example.database;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,7 +14,6 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.FileChooser;
 import javafx.util.converter.IntegerStringConverter;
-
 import java.io.File;
 import java.io.IOException;
 
@@ -55,18 +52,18 @@ public class DataBaseController{
 
         // связь с базой данных
         objectsTableView.setItems(data.objects);
-        ageColumn.setCellValueFactory(new PropertyValueFactory<>("age"));
+        ageColumn.setCellValueFactory(new PropertyValueFactory<>("age")); //The setCellValueFactory method specifies a cell factory for each column. The cell factories are implemented by using the PropertyValueFactory class, which uses the age, name, money and number properties of the table columns as references to the corresponding methods of the Person class.
         moneyColumn.setCellValueFactory(new PropertyValueFactory<>("money"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         numberColumn.setCellValueFactory(new PropertyValueFactory<>("number"));
         objectsTableView.setEditable(true);
         // edit
-        nameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+        nameColumn.setCellFactory(TextFieldTableCell.forTableColumn()); //setCellFactory method to reimplement the table cell as a text field with the help of the TextFieldTableCell class. The setOnEditCommit method processes editing and assigns the updated value to the corresponding table cell.
         ageColumn.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
         numberColumn.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
         moneyColumn.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
 
-        ageColumn.setOnEditCommit(
+        ageColumn.setOnEditCommit(              //The setOnEditCommit method processes editing and assigns the updated value to the corresponding table cell. resource: https://docs.oracle.com/javase/8/javafx/user-interface-tutorial/table-view.htm#CJAGAAEE
                 event -> {
                     Person person = event.getRowValue();
                     try {

@@ -14,27 +14,27 @@
     </padding>
    <HBox alignment="CENTER_LEFT" fillHeight="false" prefHeight="37.0" prefWidth="543.0" spacing="5.0" VBox.vgrow="NEVER">
       <children>
-         <Button fx:id="addObjectButton" mnemonicParsing="false" onAction="#clickAddObjectButton" prefHeight="37.0" prefWidth="63.0" style="-fx-background-color: #0f73d6;" text="Add" textAlignment="CENTER" textFill="BLACK" HBox.hgrow="ALWAYS">
+         <Button fx:id="addObjectButton" mnemonicParsing="false" onAction="#clickAddObjectButton" prefHeight="37.0" prefWidth="63.0" style="-fx-background-color: #0f73d6;" text="Add" textAlignment="CENTER" textFill="WHITE" HBox.hgrow="ALWAYS">
             <font>
                <Font name="Roboto Regular" size="12.0" />
             </font></Button>
-         <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#clickDeleteButton" prefHeight="63.0" prefWidth="63.0" style="-fx-background-color: #0f73d6;" text="Delete" textAlignment="CENTER" textFill="BLACK">
+         <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#clickDeleteButton" prefHeight="63.0" prefWidth="63.0" style="-fx-background-color: #0f73d6;" text="Delete" textAlignment="CENTER" textFill="WHITE">
              <font>
                  <Font name="Roboto Regular" size="12.0" />
              </font></Button>
-         <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clickClearButton" prefHeight="63.0" prefWidth="63.0" style="-fx-background-color: #0f73d6;" text="Clear" textAlignment="CENTER" textFill="BLACK">
+         <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clickClearButton" prefHeight="63.0" prefWidth="63.0" style="-fx-background-color: #0f73d6;" text="Clear" textAlignment="CENTER" textFill="WHITE">
              <font>
                  <Font name="Roboto Regular" size="12.0" />
              </font></Button>
-         <Button mnemonicParsing="false" onAction="#onClickButtonOpenFile" prefHeight="37.0" prefWidth="65.0" style="-fx-background-color: #0f73d6;" text="Open file" textFill="BLACK">
+         <Button mnemonicParsing="false" onAction="#onClickButtonOpenFile" prefHeight="37.0" prefWidth="65.0" style="-fx-background-color: #0f73d6;" text="Open file" textFill="WHITE">
              <font>
                  <Font name="Roboto Regular" size="12.0" />
              </font></Button>
-         <Button fx:id="saveFileButton" mnemonicParsing="false" onAction="#clickSaveFileButton" prefHeight="37.0" prefWidth="63.0" style="-fx-background-color: #0f73d6;" text="Save file" textAlignment="CENTER" textFill="BLACK">
+         <Button fx:id="saveFileButton" mnemonicParsing="false" onAction="#clickSaveFileButton" prefHeight="37.0" prefWidth="63.0" style="-fx-background-color: #0f73d6;" text="Save file" textAlignment="CENTER" textFill="WHITE">
              <font>
                  <Font name="Roboto Regular" size="12.0" />
              </font></Button>
-         <Button fx:id="readFileButton" mnemonicParsing="false" onAction="#clickReadFileButton" prefHeight="37.0" prefWidth="63.0" style="-fx-background-color: #0f73d6;" text="Read file" textAlignment="CENTER" textFill="BLACK">
+         <Button fx:id="readFileButton" mnemonicParsing="false" onAction="#clickReadFileButton" prefHeight="37.0" prefWidth="63.0" style="-fx-background-color: #0f73d6;" text="Read file" textAlignment="CENTER" textFill="WHITE">
              <font>
                  <Font name="Roboto Regular" size="12.0" />
              </font></Button>
@@ -46,7 +46,7 @@
          <Insets left="5.0" right="5.0" />
       </VBox.margin>
    </HBox>
-   <TableView fx:id="objectsTableView" editable="true" prefHeight="93.0" prefWidth="704.0" style="-fx-color: #0f73d6; -fx-font-name: Roboto Regular;" VBox.vgrow="ALWAYS">
+   <TableView fx:id="objectsTableView" editable="true" prefHeight="93.0" prefWidth="704.0" style="-fx-color: #91caeb; -fx-font-name: Roboto Regular;" VBox.vgrow="ALWAYS">
      <columns>
        <TableColumn fx:id="nameColumn" prefWidth="75.0" style="-fx-font-name: Roboto Regular;" text="Name" />
        <TableColumn fx:id="ageColumn" prefWidth="75.0" style="-fx-font-name: Roboto Regular;" text="Age" />

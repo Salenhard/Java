@@ -5,7 +5,6 @@ import javafx.collections.ObservableList;
 
 import java.io.*;
 import java.io.IOException;
-import java.util.ArrayList;
 
 /**
  * DataBase class
@@ -30,7 +29,6 @@ public class DataBase {
      * @throws IOException if file not opened
      */
     public void readFile(String fileName) throws IOException {
-
         try {
             File file = new File(fileName);
             FileReader fr = new FileReader(file);
